@@ -107,7 +107,7 @@ tr:hover {
 </head>
 <body>
 	<header>
-		<h1>Blog Tin Tức</h1>
+		<h1>Blog Cá Nhân</h1>
     
 	</header>
 	<nav>
