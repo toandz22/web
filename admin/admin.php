@@ -68,9 +68,9 @@ h4{
     color: black; 
 }
 </style>
-<form method="post" action="http://localhost/web/index.php" >
-    <input type="submit" name="logout" value="Home">
-</form>
+<button onclick >
+	<a href="../">Trang Chủ</a>
+</button>
 <body>
     <h1>Trang Quản trị </h1>
     <?php

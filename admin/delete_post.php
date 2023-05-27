@@ -2,6 +2,12 @@
 //Khai báo sử dụng session
 session_start();
 
+//Kiểm tra đăng nhập
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+    exit;
+}
+
 //Kiểm tra id của bài viết cần xóa
 if (!isset($_GET['id'])) {
     header('Location: admin.php');

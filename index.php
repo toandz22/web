@@ -16,6 +16,7 @@ session_start();
 </head>
 <body>
 <style>
+  
 table {
     font-family: Arial, sans-serif;
     border-collapse: collapse;
@@ -76,7 +77,7 @@ tr:hover {
 		form {
 			margin-top: 10px;
 			margin-right: 10px;
-      margin-left: 25px;
+      margin-left: 30px;
 		}
 
 		input[type=text] {
@@ -89,10 +90,11 @@ tr:hover {
 		button[type=submit] {
 			background-color: #4CAF50;
 			color: white;
-			padding: 14px 20px;
+			padding: auto;
 			border: none;
 			border-radius: 4px;
 			cursor: pointer;
+
 		}
 
 		button[type=submit]:hover {
@@ -101,11 +103,16 @@ tr:hover {
     h4{
       color: white;
       text-align: center;
+      margin-left: 25px;
+
     }
-	
+    .btn_logout{
+			margin-right: 10px;
+      margin-left: 25px;
+    }
 </style>
-</head>
 <body>
+
 	<header>
 		<h1>Blog Cá Nhân</h1>
 	</header>
@@ -132,18 +139,42 @@ tr:hover {
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
+
     <?php 
     if(isset($_SESSION["username"])) {
-        echo "<h4>"."Xin chào, ".$_SESSION["username"]."</h4>";
-        echo '<form method="post" action="../web/session.php">';
-        echo '<button type="submit" name="logout">Logout</button>';
+    echo "<h4>"."Xin chào, ".$_SESSION["username"]."</h4>";
+    echo '<form method="post" action="../web/session.php">';
+    echo '<button type="submit" name="logout" class="btn_logout">Logout</button>';
+    echo '</form>';
+    
+    // Add the following lines
+    $connect = mysqli_connect('localhost', 'root', '', 'data') or die('Không thể kết nối tới database');
+    mysqli_set_charset($connect, 'UTF8');
+    $username = $_SESSION['username'];
+    $query = "SELECT role FROM member WHERE username='$username'";
+    $result = mysqli_query($connect, $query);
+    $row = mysqli_fetch_assoc($result);
+    $role = $row['role'];
+    if ($role === 'admin') {
+        echo '<form method="post" action="admin/admin.php">';
+        echo '<button type="submit" class="btn btn-primary">Admin Page</button>';
         echo '</form>';
     } else {
-        echo '<li>'.'<a href="../web/dangnhap/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>'.'</li>';
-        echo '<li>'.'<a href="../web/dangky/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>'.'</li>';
-
+        echo '<form method="post" action="user/user.php">';
+        echo '<button type="submit" class="btn btn-primary">User Page</button>';
+        echo '</form>';
     }
-    ?>
+
+    if (isset($_POST['logout'])) {
+        session_unset();
+        session_destroy();
+        header('Location: ../web/index.php');
+    }
+} else {
+    echo '<li>'.'<a href="../web/dangnhap/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>'.'</li>';
+    echo '<li>'.'<a href="../web/dangky/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>'.'</li>';
+}
+?>
 
   </div>
 </nav>
@@ -218,9 +249,11 @@ for ($i = 1; $i <= $total_pages; $i++) {
         echo '<li><a href="?page=' . $i . '">' . $i . '</a></li>';
     }
 }
+
 ?>
 </tbody>
 </table>
+
 <script>
           $(document).ready(function(){
           $("#myInput").on("keyup", function() {
