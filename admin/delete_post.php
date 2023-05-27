@@ -13,20 +13,15 @@ if (!isset($_GET['id'])) {
     header('Location: admin.php');
     exit;
 }
-
 $id = $_GET['id'];
 
 //Kết nối tới database
-$connect = mysqli_connect ('localhost', 'root', '', 'data') or die ('Không thể kết nối tới database');
-mysqli_set_charset($connect, 'UTF8');
-if($connect === false){ 
-die("ERROR: Could not connect. " . mysqli_connect_error()); 
-}
+include('connect.php');
+
 //Xác nhận yêu cầu xóa bài viết từ người dùng
 if (isset($_POST['delete_post'])) {
     $confirm = $_POST['confirm_delete'];
     if ($confirm == 'yes') {
-        
         //Xóa bài viết khỏi database
         $query = "DELETE FROM posts WHERE id='$id'";
         $result = mysqli_query($connect, $query);
@@ -39,7 +34,7 @@ if (isset($_POST['delete_post'])) {
         }
     } else {
         //Nếu người dùng không xác nhận xóa bài viết, chuyển hướng về trang quản lý bài viết
-        header('Location: admin.php');
+        header('Location: view.php');
         exit;
     }
 }

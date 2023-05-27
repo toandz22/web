@@ -200,7 +200,7 @@ while ($row_post = mysqli_fetch_assoc($result_post)) {
     echo "<td>" . $row_post['category'] . "</td>";
     echo "<td>" . $row_post['author'] . "</td>";
     echo "<td>" . $row_post['date'] . "</td>";
-    echo "<td><a href='edit_post.php?id=" . $row_user['id'] . "'>Edit</a> | <a href='delete_post.php?id=" . $row_user['id'] . "'>Delete</a></td>";
+    echo "<td><a href='edit_post.php?id=" . $row_post['id'] . "'>Edit</a> | <a href='delete_post.php?id=" . $row_post['id'] . "'>Delete</a></td>";
     echo "</tr>";
 }
 mysqli_close($conn);

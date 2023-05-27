@@ -8,8 +8,6 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 $user_id = $_GET['id'];
-
-
 // Lấy thông tin user từ database
 $sql_select = "SELECT * FROM member WHERE id = $user_id";
 $result_select = mysqli_query($conn,$sql_select);
