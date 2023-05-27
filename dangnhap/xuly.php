@@ -37,6 +37,7 @@ if ($password != $row['password']) {
     echo '<script language="javascript"> alert("Mật khẩu hoặc tài khoản không đúng. Vui lòng nhập lại. "); window.location="http://localhost/web/dangnhap/login.php";</script>';
 exit;
 }
+
 //Lưu tên đăng nhập
 $_SESSION['username'] = $username;
 if ($role == 'admin') {

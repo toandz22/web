@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,6 +75,7 @@ tr:hover {
 		form {
 			margin-top: 10px;
 			margin-right: 10px;
+      margin-left: 25px;
 		}
 
 		input[type=text] {
@@ -93,6 +97,10 @@ tr:hover {
 		button[type=submit]:hover {
 			background-color: #45a049;
 		}
+    h4{
+      color: white;
+      text-align: center;
+    }
 
 </style>
 </head>
@@ -122,8 +130,19 @@ tr:hover {
       <li><a href="../web/category.php?category=the-thao">Thể Thao</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a href="../web/dangnhap/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    <li><a href="../web/dangky/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    <?php 
+    if(isset($_SESSION["username"])) {
+        echo "<h4>"."Xin chào, ".$_SESSION["username"]."</h4>";
+        echo '<form method="post" action="../web/session.php">';
+        echo '<button type="submit" name="logout">Logout</button>';
+        echo '</form>';
+    } else {
+        echo '<li>'.'<a href="../web/dangnhap/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>'.'</li>';
+        echo '<li>'.'<a href="../web/dangky/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>'.'</li>';
+
+    }
+    ?>
+
     </ul>
   </div>
 </nav>

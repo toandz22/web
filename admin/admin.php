@@ -116,8 +116,7 @@ h4{
         </thead>
       <tbody><tr>
 <?php
-session_start();
-$current_username = $_SESSION['username'];
+
 //Kết nối cơ sở dữ liệu
 $servername = "localhost";
 $username = "root";
