@@ -108,7 +108,6 @@ tr:hover {
 <body>
 	<header>
 		<h1>Blog Cá Nhân</h1>
-    
 	</header>
 	<nav>
 <br>
@@ -124,13 +123,13 @@ tr:hover {
     
       <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <ul class="nav navbar-nav">
+    <!-- <ul class="nav navbar-nav">
       <li class="active"><a href="../web/index.php">Home</a></li>
       <li><a href="../web/category.php?category=doi-song">Đời Sống</a></li>
       <li><a href="../web/category.php?category=giai-tri">Giải trí</a></li>
       <li><a href="../web/category.php?category=drama">Drama</a></li>
       <li><a href="../web/category.php?category=the-thao">Thể Thao</a></li>
-    </ul>
+    </ul> -->
     
     <ul class="nav navbar-nav navbar-right">
     <?php 
@@ -145,6 +144,7 @@ tr:hover {
 
     }
     ?>
+
   </div>
 </nav>
 <input class="form-control" id="myInput" type="text" placeholder="Search..">
