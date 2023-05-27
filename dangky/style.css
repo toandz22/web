@@ -1,0 +1,34 @@
+.form {
+  background-color: rgb(242, 248, 247);
+  width: 300px;
+  border: 1px solid green;
+  padding: 20px;
+  margin: 0 auto;
+  font-weight: 700px;
+ }
+
+ .form input {
+  width: 100%;
+  padding: 10px 0;
+ }
+ .button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  }
+    
+  .button:hover {
+  opacity: 0.8;
+  }
+.back{
+  text-align: center;
+  color: green;
+  font-size: 20px;
+  font-weight: 700px;
+  text-decoration: underline;
+}
+

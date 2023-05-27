@@ -1,0 +1,220 @@
+/* Reset CSS */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Header */
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+h1{
+	font-size: 2em;
+	text-align: center;
+}
+form{
+	display: block;
+	color: #333;
+	text-decoration: none;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+	border-radius: 5px;
+}
+.del{
+	text-align: center;
+	display: block;
+	color: #333;
+	text-decoration: none;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+	border-radius: 5px;
+}
+/* Navigation */
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+nav li {
+	margin: 0 10px;
+}
+
+nav a {
+	color: #333;
+	text-decoration: none;
+}
+
+nav a:hover {
+        margin: 24px;
+        width: 50px;
+        height: 50px;
+        background: green;
+        animation: zoom-in-zoom-out 2s ease-out infinite;
+      }
+      
+      @keyframes zoom-in-zoom-out {
+        0% {
+          transform: scale(1, 1);
+        }
+        50% {
+          transform: scale(1.5, 1.5);
+        }
+        100% {
+          transform: scale(1, 1);
+        }
+      }
+
+/* Main Content */
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px 0;
+}
+
+article {
+	width: 80%;
+	margin: 20px 0;
+}
+
+article h2 {
+	margin-bottom: 10px;
+}
+.menu {
+	background-color: #f2f2f2;
+	padding: 10px;
+  }
+  
+  .menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+  }
+  
+  .menu li {
+	border-radius: 5px;
+	margin: 0 10px;
+  }
+  
+  .menu a {
+	display: block;
+	color: #333;
+	text-decoration: none;
+	padding: 10px;
+	transition: background-color 0.3s ease;
+	border-radius: 5px;
+  }
+  
+  .menu a:hover {
+	background-color: #333;
+	color: #fff;
+  }
+  
+/* Footer */
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+.logout {
+    text-align: right;
+    display: flexbox;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px 0;
+}
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+ }
+
+ tr:nth-child(even) {
+    background-color: #f2f2f2;
+ }
+
+tr:hover {
+    background-color: #e2e2e2;
+ }
+
+ th {
+    background-color: #4CAF50;
+    color: white;
+ }
+ /* Set background color and font family for the whole page */
+body {
+	background-color: #f2f2f2;
+	font-family: Arial, sans-serif;
+  }
+  
+  /* Style form elements */
+  select{
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: vertical;
+	box-sizing: border-box;
+  }
+  label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: vertical;
+	box-sizing: border-box;
+  }
+  
+  input[type="file"]{
+	margin-bottom: 10px;
+  }
+  
+  /* Preview image */
+  #image-preview {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+  }
+  
+  /* Style submit button */
+  input[type="submit"] {
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+	background-color: #3e8e41;
+  }
+  button{
+	background-color: #4CAF50;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }

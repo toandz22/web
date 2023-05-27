@@ -1,0 +1,61 @@
+/* Thiết lập font chữ và màu sắc cho phần tiêu đề */
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+form{
+  background-color: rgb(242, 248, 247);
+  width: 300px;
+  border: 1px solid green;
+  padding: 20px;
+  margin: 0 auto;
+  font-weight: 700px;
+  
+}
+/* Thiết lập đường viền cho ô input */
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Thiết lập màu nền cho nút Hiển thị mật khẩu */
+button {
+  background-color: #f0f0f0;
+  border: none;
+  color: #333;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+ 
+}
+/* Thiết lập kiểu dáng cho nút Đăng nhập */
+.button {
+  background-color: #3a6e9b;
+  border: none;
+  color: white;
+  padding: 8px 116px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Thiết lập kiểu dáng cho liên kết Chưa có tài khoản */
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+/* Thiết lập kiểu dáng cho liên kết Đăng ký */
+a:hover {
+  text-decoration: underline;
+}
