@@ -76,7 +76,7 @@
 <body>
 <form method="post" action="http://localhost/web" >
   <input type="submit" name="logout" value="Back">
-  </form>
+</form>
   
 <?php
 //Kết nối tới database
@@ -95,8 +95,8 @@ $row = mysqli_fetch_array($result);
 //Hiển thị nội dung bài viết
 echo '<h1>' . $row['title'] . '</h1>';
 echo '<div style="background-color: #fff; border: 1px solid #ccc; padding: 10px;">' . $row['content'] . '</div>';
-
 ?>
+
 </body>
 <form method="post" action="submit_comment.php">
   <div class="form-group">

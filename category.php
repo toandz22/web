@@ -1,5 +1,5 @@
 <?php
-session_start();
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +8,10 @@ session_start();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
 </head>
 <body>
 <style>
@@ -118,9 +118,9 @@ tr:hover {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">BlogName</a>
+  <a class="navbar-brand" href="#">BlogName</a>
 
-      <nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="active"><a href="../web/index.php">Home</a></li>
@@ -129,8 +129,8 @@ tr:hover {
       <li><a href="../web/category.php?category=drama">Drama</a></li>
       <li><a href="../web/category.php?category=the-thao">Thể Thao</a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-    <?php 
+<ul class="nav navbar-nav navbar-right">
+<?php 
     if(isset($_SESSION["username"])) {
         echo "<h4>"."Xin chào, ".$_SESSION["username"]."</h4>";
         echo '<form method="post" action="../web/session.php">';
@@ -143,12 +143,12 @@ tr:hover {
     }
     ?>
 
-    </ul>
-  </div>
+</ul>
+</div>
 </nav>
 <input class="form-control" id="myInput" type="text" placeholder="Search..">
   <table class="table table-bordered table-striped">
-        <tbody id="myTable">
+  <tbody id="myTable">
 <?php
 // Kết nối tới database
 $connect = mysqli_connect('localhost', 'root', '', 'data') or die('Không thể kết nối tới database');

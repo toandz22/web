@@ -17,7 +17,7 @@
   <label>Nội dung:</label><br>
   <textarea name="content"></textarea><br>
   <label>Danh Mục:</label><br>
-  <div class="form-group">
+<div class="form-group">
   <label for="sel1">Select category:</label>
   <select class="form-control" name="category" id="sel1">
     <option>Đời Sống</option>
@@ -25,9 +25,9 @@
     <option>Giải Trí</option>
     <option>Drama</option>
   </select>
-  </div>
+</div>
   <label>Ảnh:</label><br>
-<input type="file" name="image"><br>
+  <input type="file" name="image"><br>
 
   <label>Tên tác giả(ẩn danh):</label><br>
   <input type="text" name="author"><br>

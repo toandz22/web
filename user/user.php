@@ -4,21 +4,20 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Dashboard </title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-  <title>blog</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+<title> Dashboard </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>blog</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-
 <button onclick >
 	<a href="../">Trang Chủ</a>
 </button>
-
+</head>
 <body>
 	<header>
 		<h1>My Blog</h1>
@@ -26,24 +25,24 @@ session_start();
         echo"Bạn đang đăng nhập với tư cách là :" .$_SESSION["username"];
         ?>
 	</header>
-<div class="menu">
-    <ul>
+    <div class="menu">
+      <ul>
         <li><a href="view.php">Quản lí bài viết</a></li>
         <li><a href="add_post.php">Thêm mới bài viết </a></li>
-    </ul>
-</div>
+      </ul>
+    </div>
 <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th> Tiêu đề </th>
                 <th> Nội dung </th>
                 <th> Danh Mục </th>
-				        <th> Tác Gỉa </th>
-				         <th> thời gian </th>
+				<th> Tác Gỉa </th>
+				<th> thời gian </th>
             </tr>
         </thead>
-        <tbody id="myTable">
-            <?php
+<tbody id="myTable">
+<?php
 //Kết nối tới database
 $connect = mysqli_connect('localhost', 'root', '', 'data') or die('Không thể kết nối tới database');
 mysqli_set_charset($connect, 'UTF8');

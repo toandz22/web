@@ -94,7 +94,6 @@ tr:hover {
 			border: none;
 			border-radius: 4px;
 			cursor: pointer;
-
 		}
 
 		button[type=submit]:hover {
@@ -182,9 +181,9 @@ tr:hover {
   <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th> Tiêu đề </th>
-                <th> Nội dung </th>
-                <th> Danh Mục </th>
+        <th> Tiêu đề </th>
+        <th> Nội dung </th>
+        <th> Danh Mục </th>
 				<th> Tác Gỉa </th>
 				<th> thời gian </th>
             </tr>

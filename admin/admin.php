@@ -60,12 +60,12 @@ h1{
     font-size: 35px;
     font-weight: bold;
     color: black;
-    
+
 }
 h4{
     text-align: center;
     font-weight: bold;
-    color: black; 
+    color: black;
 }
 </style>
 <button onclick >
@@ -74,22 +74,15 @@ h4{
 <body>
     <h1>Trang Quản trị </h1>
     <?php
-        echo"<h4>"."Bạn đang đăng nhập với tư cách là :" .$_SESSION["username"]."</h4>";
-    ?>
+echo "<h4>" . "Bạn đang đăng nhập với tư cách là :" . $_SESSION["username"] . "</h4>";
+?>
 <div class="panel-footer">
      <div class="row">
       <div class="col col-xs-8">
-       <ul class="pagination hidden-xs pull-right">
-       </ul>
-       <ul class="pagination visible-xs pull-right">
-        </li>
-       </ul>
+       <ul class="pagination hidden-xs pull-right"></ul>
+         <ul class="pagination visible-xs pull-right"></ul>
       </div>
      </div>
-    </div>
-   </div>
-  </div>
- </div>
 </div>
 <div class="panel panel-default panel-table">
     <div class="panel-heading">
@@ -98,11 +91,12 @@ h4{
                 <h3 class="panel-title">Danh sách User</h3>
             </div>
             <div class="col col-xs-6 text-right">
-            <a href="../admin/add_user.php"><button type="button" class="btn btn-sm btn-primary btn-create" >Thêm mới</button></a>
+                <a href="../admin/add_user.php"><button type="button" class="btn btn-sm btn-primary btn-create" >Thêm mới</button></a>
             </div>
         </div>
     </div>
-    <div class="panel-body">
+</div>
+<div class="panel-body">
     <table class="table table-striped table-bordered table-list">
         <thead>
          <tr>
@@ -110,11 +104,10 @@ h4{
           <th>username</th>
           <th>Email</th>
           <th>Role</th>
-          <th><em class="fa fa-cog"></em>
-          </th>
+          <th><em class="fa fa-cog"></em></th>
          </tr>
         </thead>
-      <tbody><tr>
+    <tbody><tr>
 <?php
 
 //Kết nối cơ sở dữ liệu
@@ -144,8 +137,8 @@ while ($row_user = mysqli_fetch_assoc($result_user)) {
 mysqli_close($conn);
 
 ?>
-     </tbody></table>
-    </div>
+    </tbody></table>
+</div>
     <div class="panel-footer">
      <div class="row">
       <div class="col col-xs-8">
@@ -157,10 +150,6 @@ mysqli_close($conn);
       </div>
      </div>
     </div>
-   </div>
-  </div>
- </div>
-</div>
 <div class="panel panel-default panel-table">
     <div class="panel-heading">
         <div class="row">
@@ -185,7 +174,7 @@ mysqli_close($conn);
                     <th><em class="fa fa-cog"></em></th>
                 </tr>
             </thead>
-            <tbody>
+    <tbody>
 <?php
 $current_username = $_SESSION['username'];
 //Kết nối cơ sở dữ liệu
@@ -217,8 +206,8 @@ while ($row_post = mysqli_fetch_assoc($result_post)) {
 mysqli_close($conn);
 
 ?>
-            </tbody>
-        </table>
+    </tbody>
+    </table>
     </div>
     <div class="panel-footer">
         <div class="row">

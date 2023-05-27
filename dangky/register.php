@@ -16,20 +16,20 @@
 <h2>Đăng ký thành viên</h2>
 <form>
 <div class="form-group">
-    <label for="name">Tên đăng nhập</label>
-    Username: <input type="text" class="form-control" name="username"  placeholder="Nhập họ tên">
+  <label for="name">Tên đăng nhập</label>
+  Username: <input type="text" class="form-control" name="username"  placeholder="Nhập họ tên">
 </div>
 <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control"name="email"  placeholder="Nhập email">
+  <label for="email">Email</label>
+  <input type="email" class="form-control"name="email"  placeholder="Nhập email">
 </div>
 <div class="form-group">
-    <label for="password">Mật khẩu</label>
-     <input type="password" class="form-control"name="password" placeholder="Nhập mật khẩu">
+  <label for="password">Mật khẩu</label>
+  <input type="password" class="form-control"name="password" placeholder="Nhập mật khẩu">
 </div>
 <div class="form-group">
-    <label for="text">Số Điện Thoại</label>
-    Phone: <input type="text" class="form-control" name="phone" placeholder="Nhập số điện thoại">
+  <label for="text">Số Điện Thoại</label>
+  Phone: <input type="text" class="form-control" name="phone" placeholder="Nhập số điện thoại">
 </div>
   <input type='submit' class="button" name="dangky" value='Đăng ký'/>
 <div class="back">

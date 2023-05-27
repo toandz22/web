@@ -5,36 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
-    <body>
-        <div class="container">
-            <h1 class="mb-4">Sửa đổi bài đăng</h1>
-            <form method="post">
-                <div class="form-group mb-3">
-                    <label for="title">Tiêu đề:</label>
-                    <input type="text" class="form-control" id="title" name="title" value="">
-                </div>
-                <div class="form-group mb-3">
-                    <label for="content">Nội dung:</label>
-                    <textarea class="form-control" id="content" name="content"></textarea>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="category">Danh Mục:</label>
-                    <select class="form-control" id="category" name="category">
-                        <option >Đời Sống</option>
-                        <option >Thể Thao</option>
-                        <option >Giải Trí</option>
-                        <option >Drama</option>
-                    </select>
-                </div>
-                <div class="form-group mb-3">
-                    <label for="author">Tên ẩn danh:</label>
-                    <input type="text" class="form-control" id="author" name="author" value="">
-                </div>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Sửa đổi bài đăng</h1>
+        <form method="post">
+            <div class="form-group mb-3">
+                <label for="title">Tiêu đề:</label>
+                <input type="text" class="form-control" id="title" name="title" value="">
+            </div>
+            <div class="form-group mb-3">
+                <label for="content">Nội dung:</label>
+                <textarea class="form-control" id="content" name="content"></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label for="category">Danh Mục:</label>
+                 <select class="form-control" id="category" name="category">
+                    <option >Đời Sống</option>
+                    <option >Thể Thao</option>
+                    <option >Giải Trí</option>
+                    <option >Drama</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="author">Tên ẩn danh:</label>
+                <input type="text" class="form-control" id="author" name="author" value="">
+            </div>
                 <button type="submit" class="btn btn-primary" name="submit">Lưu thay đổi</button>
-            </form>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
 <?php
 
