@@ -16,7 +16,7 @@ session_start();
 </head>
 <body>
 <style>
-  
+
 table {
     font-family: Arial, sans-serif;
     border-collapse: collapse;
@@ -123,10 +123,10 @@ tr:hover {
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">BlogName</a>
-    
+
       <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
@@ -136,16 +136,16 @@ tr:hover {
       <li><a href="../web/category.php?category=drama">Drama</a></li>
       <li><a href="../web/category.php?category=the-thao">Thể Thao</a></li>
     </ul>
-    
+
     <ul class="nav navbar-nav navbar-right">
 
-    <?php 
-    if(isset($_SESSION["username"])) {
-    echo "<h4>"."Xin chào, ".$_SESSION["username"]."</h4>";
+    <?php
+if (isset($_SESSION["username"])) {
+    echo "<h4>" . "Xin chào, " . $_SESSION["username"] . "</h4>";
     echo '<form method="post" action="../web/session.php">';
     echo '<button type="submit" name="logout" class="btn_logout">Logout</button>';
     echo '</form>';
-    
+
     // Add the following lines
     $connect = mysqli_connect('localhost', 'root', '', 'data') or die('Không thể kết nối tới database');
     mysqli_set_charset($connect, 'UTF8');
@@ -170,8 +170,8 @@ tr:hover {
         header('Location: ../web/index.php');
     }
 } else {
-    echo '<li>'.'<a href="../web/dangnhap/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>'.'</li>';
-    echo '<li>'.'<a href="../web/dangky/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>'.'</li>';
+    echo '<li>' . '<a href="../web/dangnhap/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a>' . '</li>';
+    echo '<li>' . '<a href="../web/dangky/register.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>' . '</li>';
 }
 ?>
 
@@ -210,9 +210,9 @@ $offset = ($current_page - 1) * $records_per_page;
 $search_by = isset($_GET['search-by']) ? $_GET['search-by'] : 'title';
 $search_term = isset($_GET['search']) ? $_GET['search'] : '';
 if ($search_by === 'title') {
-    $query = "SELECT * FROM posts WHERE title LIKE '%$search_term%' LIMIT $records_per_page OFFSET $offset";
+    $query = "SELECT * FROM posts WHERE title LIKE '%$search_term%' ORDER BY date DESC LIMIT $records_per_page OFFSET $offset";
 } else {
-    $query = "SELECT * FROM posts WHERE category LIKE '%$search_term%' LIMIT $records_per_page OFFSET $offset";
+    $query = "SELECT * FROM posts WHERE category LIKE '%$search_term%' ORDER BY date DESC LIMIT $records_per_page OFFSET $offset";
 }
 $result = mysqli_query($connect, $query);
 
@@ -230,7 +230,7 @@ echo '</nav>';
 
 while ($row = mysqli_fetch_array($result)) {
     echo '<tr>';
-    echo'<td>' . '<a href="read_post.php?id=' . $row['id'] . '">' . $row['title'] . '</a>' . '</td>';
+    echo '<td>' . '<a href="read_post.php?id=' . $row['id'] . '">' . $row['title'] . '</a>' . '</td>';
     echo '<td>' . substr($row['content'], 0, 500) . '....' . '</td>';
     echo '<td>' . $row['category'] . '</td>';
     echo '<td>' . $row['author'] . '</td>';
