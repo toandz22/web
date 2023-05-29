@@ -16,6 +16,7 @@ if(isset($_POST['title']) && isset($_POST['content']) && isset($_POST['category'
    $title = $_POST['title'];
    $content = $_POST['content'];
    $category = $_POST['category'];
+   $image = $_POST['image'];
    $author = $_POST['author'];
    
 if (!$title || !$content || !$author ) {
@@ -23,7 +24,7 @@ if (!$title || !$content || !$author ) {
     exit;
     }
    // Sử dụng câu lệnh SQL INSERT để thêm bài viết mới vào bảng posts
-   $sql = "INSERT INTO posts (title, content, category, author) VALUES ('$title', '$content','$category','$author')";
+   $sql = "INSERT INTO posts (title, content, category,image, author) VALUES ('$title', '$content','$category','$image','$author')";
 
    if ($conn->query($sql) === TRUE) {
     echo '<script language="javascript"> alert("Thêm mới bài viết thành công ! "); window.location="http://localhost/web/user/user.php";</script>';
@@ -31,8 +32,6 @@ if (!$title || !$content || !$author ) {
      echo "Lỗi: " . $sql . "<br>" . $conn->error;
    }
 }
-
-
 // Đóng kết nối
 $conn->close();
 ?>

@@ -106,7 +106,7 @@ tr:hover {
 </head>
 <body>
 	<header>
-		<h1>Blog Tin Tức</h1>
+		<h1>Blog </h1>
 	</header>
 	<nav>
 <br>
@@ -118,7 +118,7 @@ tr:hover {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-  <a class="navbar-brand" href="#">BlogName</a>
+      <a class="navbar-brand" href="../web/index.php">BlogName</a>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">

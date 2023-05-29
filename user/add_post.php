@@ -28,10 +28,11 @@
 </div>
   <label>Ảnh:</label><br>
   <input type="file" name="image"><br>
-
+  
   <label>Tên tác giả(ẩn danh):</label><br>
   <input type="text" name="author"><br>
   <input type="submit" value="Thêm mới">
+  
 </form>
 <?php require 'xuly.php' ?>
 </body>

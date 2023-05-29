@@ -1,3 +1,4 @@
+
 <?php
 // Kết nối database
 $connect = mysqli_connect('localhost', 'root', '', 'data');

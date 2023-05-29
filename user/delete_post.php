@@ -28,7 +28,7 @@ if (isset($_POST['delete_post'])) {
 
         //Thông báo kết quả xóa bài viết
         if ($result == true) {
-            echo '<script language="javascript"> alert("Xóa bài viết thành công ! "); window.location="http://localhost/web/user/user.php";</script>';
+            echo '<script language="javascript"> alert("Xóa bài viết thành công ! "); window.location="http://localhost/web/user/view.php";</script>';
         } else {
             echo "Lỗi: " . mysqli_error($connect);
         }
