@@ -129,7 +129,7 @@ session_start();
         <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../web/index.php">Home</a></li>
+        <li><a href="../web/index.php">Home</a></li>
         <li><a href="../web/category.php?category=doi-song">Đời Sống</a></li>
         <li><a href="../web/category.php?category=giai-tri">Giải trí</a></li>
         <li><a href="../web/category.php?category=drama">Drama</a></li>
@@ -174,7 +174,10 @@ if (isset($_SESSION["username"])) {
 ?>
     </div>
   </nav>
-  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+  <input class="form-control" name="search" type="text" placeholder="Search.." value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>">
+  <button type="submit">Search</button>
+</form>
     <table class="table table-bordered table-striped">
           <thead>
               <tr>
@@ -205,14 +208,40 @@ $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($current_page - 1) * $records_per_page;
 
 //Modify SQL query to include LIMIT and OFFSET clauses
-$search_by = isset($_GET['search-by']) ? $_GET['search-by'] : 'title';
-$search_term = isset($_GET['search']) ? $_GET['search'] : '';
-if ($search_by === 'title') {
-    $query = "SELECT * FROM posts WHERE title LIKE '%$search_term%' ORDER BY date DESC LIMIT $records_per_page OFFSET $offset";
+// Modify SQL query to include LIMIT and OFFSET clauses
+
+$search_term = isset($_GET['search']) ? mysqli_real_escape_string($connect, $_GET['search']) : '';
+
+if (!empty($search_term)) {
+    $sql = "SELECT * FROM posts WHERE title LIKE '%$search_term%' OR content LIKE '%$search_term%' OR category LIKE '%$search_term%'";
 } else {
-    $query = "SELECT * FROM posts WHERE category LIKE '%$search_term%' ORDER BY date DESC LIMIT $records_per_page OFFSET $offset";
+    $sql = "SELECT * FROM posts";
 }
+
+$result_count = mysqli_query($connect, $sql);
+$total_records = mysqli_num_rows($result_count);
+
+// Determine number of records per page
+$records_per_page = 5;
+
+// Determine current page
+$current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+// Calculate offset
+$offset = ($current_page - 1) * $records_per_page;
+
+// Modify SQL query to include LIMIT and OFFSET clauses
+if (!empty($search_term)) {
+    $query = "$sql ORDER BY date DESC LIMIT $records_per_page OFFSET $offset";
+} else {
+    $query = "$sql ORDER BY date DESC LIMIT $records_per_page OFFSET $offset";
+}
+
 $result = mysqli_query($connect, $query);
+
+// Calculate total number of pages
+$total_pages = ceil($total_records / $records_per_page);
+
 
 //Calculate total number of pages
 $query = "SELECT COUNT(*) AS count FROM posts";

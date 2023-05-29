@@ -123,7 +123,7 @@ tr:hover {
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="../web/index.php">Home</a></li>
+      <li><a href="../web/index.php">Home</a></li>
       <li><a href="../web/category.php?category=doi-song">Đời Sống</a></li>
       <li><a href="../web/category.php?category=giai-tri">Giải trí</a></li>
       <li><a href="../web/category.php?category=drama">Drama</a></li>
