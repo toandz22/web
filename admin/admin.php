@@ -127,11 +127,11 @@ $result_user = mysqli_query($conn, $sql_user);
 //Hiển thị danh sách user
 while ($row_user = mysqli_fetch_assoc($result_user)) {
     echo "<tr>";
-    echo "<td>" . $row_user['id'] . "</td>";
+    echo "<td>" . $row_user['member_id'] . "</td>";
     echo "<td>" . $row_user['username'] . "</td>";
     echo "<td>" . $row_user['email'] . "</td>";
     echo "<td>" . $row_user['role'] . "</td>";
-    echo "<td><a href='edit_user.php?id=" . $row_user['id'] . "'>Edit</a> | <a href='delete_user.php?id=" . $row_user['id'] . "'>Delete</a></td>";
+    echo "<td><a href='edit_user.php?id=" . $row_user['member_id'] . "'>Edit</a> | <a href='delete_user.php?id=" . $row_user['member_id'] . "'>Delete</a></td>";
     echo "</tr>";
 }
 mysqli_close($conn);
