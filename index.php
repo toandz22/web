@@ -230,7 +230,7 @@ echo '</nav>';
 
 while ($row = mysqli_fetch_array($result)) {
     echo '<tr>';
-    echo '<td>' . '<a href="read_post.php?id=' . $row['id'] . '">' . $row['title'] . '</a>' . '</td>';
+    echo '<td>' . '<a href="read_post.php?id=' . $row['post_id'] . '">' . $row['title'] . '</a>' . '</td>';
     echo '<td>' . substr($row['content'], 0, 500) . '....' . '</td>';
     echo '<td>' . $row['category'] . '</td>';
     echo '<td>' . $row['author'] . '</td>';
