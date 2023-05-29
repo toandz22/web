@@ -9,7 +9,7 @@ if (!$conn) {
 }
 $user_id = $_GET['id'];
 // Lấy thông tin user từ database
-$sql_select = "SELECT * FROM member WHERE id = $user_id";
+$sql_select = "SELECT * FROM member WHERE member_id = $user_id";
 $result_select = mysqli_query($conn,$sql_select);
 $row = mysqli_fetch_assoc($result_select);
 
@@ -18,7 +18,7 @@ if ($row['role'] == 'admin') {
   die('<script language="javascript"> alert("Không được phép xóa tài khoản admin!"); window.location="http://localhost/web/admin/admin.php";</script>');
 }
 // Nếu không phải là tài khoản admin thì tiến hành xóa user
-$sql_delete = "DELETE FROM member WHERE id = $user_id";
+$sql_delete = "DELETE FROM member WHERE member_id = $user_id";
 $result_delete = mysqli_query($conn,$sql_delete);
 
 if($result_delete == true){
