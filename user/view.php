@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php
+<?php
 //Kết nối tới database
 include 'connect.php';
 //Lấy danh sách các bài viết từ database

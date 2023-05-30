@@ -1,4 +1,4 @@
-  <?php
+<?php
 session_start();
 ?>
   <!DOCTYPE html>
@@ -186,7 +186,6 @@ if (isset($_SESSION["username"])) {
           <th> Danh Mục </th>
           <th> Tác Gỉa </th>
           <th> thời gian </th>
-          <th> Hình Ảnh </th>
               </tr>
           </thead>
   <tbody id="myTable">
@@ -242,7 +241,6 @@ $result = mysqli_query($connect, $query);
 // Calculate total number of pages
 $total_pages = ceil($total_records / $records_per_page);
 
-
 //Calculate total number of pages
 $query = "SELECT COUNT(*) AS count FROM posts";
 $result_count = mysqli_query($connect, $query);
@@ -262,7 +260,6 @@ while ($row = mysqli_fetch_array($result)) {
     echo '<td>' . $row['category'] . '</td>';
     echo '<td>' . $row['author'] . '</td>';
     echo '<td>' . $row['date'] . '</td>';
-    echo '<td>' . '<img src="' . $row['image'] . '" width="100">' . '</td>'; //Thêm ảnh vào cột mới
     echo '</tr>';
 }
 echo '</tbody>';
