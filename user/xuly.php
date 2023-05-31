@@ -32,6 +32,7 @@ if (!$title || !$content || !$author ) {
      echo "Lỗi: " . $sql . "<br>" . $conn->error;
    }
 }
+
 // Đóng kết nối
 $conn->close();
 ?>
